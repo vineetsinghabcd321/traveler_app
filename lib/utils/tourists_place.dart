@@ -6,6 +6,8 @@ const List<Map<String, dynamic>> touristsPlace = [
     'id': 1,
     'name': 'Taj Mahal',
     'city': 'Agra',
+    'lat': 27.1751,
+    'lng': 78.0421,
     'distanceKm': 210.0,
     'imageUrl':
         'https://t3.ftcdn.net/jpg/13/17/18/70/240_F_1317187091_g6oX8OqKzNI3zfGcRJFHQ0k1dW8ItvdM.jpg',

@@ -35,6 +35,9 @@ dependencies:
   ionicons: ^0.2.2
   firebase_auth: ^6.1.2
   firebase_core: ^4.2.1
+  google_maps_flutter: ^2.14.0
+  geolocator: ^9.0.2
+  url_launcher: ^6.1.10
 
 dev_dependencies:
   flutter_test:
