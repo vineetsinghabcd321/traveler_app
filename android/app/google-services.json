@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "973633646445",
+    "project_id": "yatri-mate",
+    "storage_bucket": "yatri-mate.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973633646445:android:f0740fae6c759e83dd3464",
+        "android_client_info": {
+          "package_name": "com.example.traveler_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDcrV7KSlstVDRbgyJzS1dP0SP9qvZqA8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973633646445:android:92be41c63f8bf724dd3464",
+        "android_client_info": {
+          "package_name": "com.example.yatri_mate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDcrV7KSlstVDRbgyJzS1dP0SP9qvZqA8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
