@@ -1,6 +1,10 @@
 import 'dart:math';
 
+<<<<<<< HEAD
 import 'dart:math';
+=======
+//import 'dart:math';
+>>>>>>> 0a6ca41 (Initial commit)
 
 import 'package:flutter/material.dart';
 import 'package:traveler_app/utils/data.dart';

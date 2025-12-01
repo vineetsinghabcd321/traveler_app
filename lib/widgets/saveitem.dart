@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:traveler_app/utils/data.dart';
+<<<<<<< HEAD
 import 'package:traveler_app/utils/tourists_place.dart' as tp;
 import 'package:traveler_app/google_map/tourists_place.dart' as place_map;
+=======
+>>>>>>> 0a6ca41 (Initial commit)
 
 class SavedItem extends StatefulWidget {
   @override
@@ -36,6 +39,7 @@ class _SavedItemState extends State<SavedItem> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+<<<<<<< HEAD
                       Container(
                         width: 250,
                         height: 150.0,
@@ -184,6 +188,103 @@ class _SavedItemState extends State<SavedItem> {
                               ),
                             ),
                           ],
+=======
+                      Expanded(
+                        child: Container(
+                          width: 250,
+                          height: 150.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                            image: DecorationImage(
+                              opacity: 2,
+                              filterQuality: FilterQuality.high,
+                              image: AssetImage(datar['saved']),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          child: Column(
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Container(
+                                      height: 30.0,
+                                      width: 30.0,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Colors.white,
+                                      ),
+                                      child: Center(
+                                        child: Icon(
+                                          Ionicons.bookmark_outline,
+                                          size: 15.0,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Align(
+                                alignment: Alignment.centerLeft,
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 20.0,
+                                    horizontal: 10,
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        datar['city'],
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 14,
+                                          fontFamily: 'Ubuntu-Regular',
+                                        ),
+                                      ),
+                                      SizedBox(height: 5),
+                                      Text(
+                                        datar['places'],
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                          fontSize: 12,
+                                          fontFamily: 'Ubuntu-Regular',
+                                        ),
+                                      ),
+                                      const SizedBox(height: 10.0),
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            Iconsax.location,
+                                            size: 15,
+                                            color: Colors.white,
+                                          ),
+                                          SizedBox(width: 2),
+                                          Text(
+                                            datar['location'],
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontFamily: 'Ubuntu-Regular',
+                                              fontSize: 12,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+>>>>>>> 0a6ca41 (Initial commit)
                         ),
                       ),
                     ],

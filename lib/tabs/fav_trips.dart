@@ -3,8 +3,13 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ionicons/ionicons.dart';
+<<<<<<< HEAD
 import 'package:traveler_app/utils/tourists_place.dart';
 import 'package:traveler_app/google_map/tourists_place.dart' as place_map;
+=======
+//import 'package:traveler_app/utils/data.dart';
+import 'package:traveler_app/utils/tourists_place.dart';
+>>>>>>> 0a6ca41 (Initial commit)
 
 class FavoriteTrips extends StatefulWidget {
   @override
@@ -44,7 +49,10 @@ class _MyTripsState extends State<MyTrips> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+<<<<<<< HEAD
               // Image (no full-image tap) - only the location icon will open the map
+=======
+>>>>>>> 0a6ca41 (Initial commit)
               ClipRRect(
                 borderRadius: BorderRadius.circular(5),
                 child: Container(
@@ -98,6 +106,7 @@ class _MyTripsState extends State<MyTrips> {
                               padding: const EdgeInsets.all(10.0),
                               child: Row(
                                 children: [
+<<<<<<< HEAD
                                   // Tapping this icon opens the PlaceMapPage
                                   GestureDetector(
                                     onTap: () {
@@ -115,6 +124,12 @@ class _MyTripsState extends State<MyTrips> {
                                       size: 15,
                                       color: Colors.white,
                                     ),
+=======
+                                  Icon(
+                                    Iconsax.location,
+                                    size: 15,
+                                    color: Colors.white,
+>>>>>>> 0a6ca41 (Initial commit)
                                   ),
                                   SizedBox(width: 5),
                                   Flexible(
@@ -289,8 +304,13 @@ class _MyTripsState extends State<MyTrips> {
                 child: ListView.builder(
                   itemCount: min(5, touristsPlace.length),
                   scrollDirection: Axis.horizontal,
+<<<<<<< HEAD
                   itemBuilder: (BuildContext context, int visIndex) {
                     Map<String, dynamic> visitor = touristsPlace[visIndex];
+=======
+                  itemBuilder: (BuildContext context, int index) {
+                    Map<String, dynamic> visitor = touristsPlace[index];
+>>>>>>> 0a6ca41 (Initial commit)
                     return Padding(
                       padding: const EdgeInsets.only(right: 0.0),
                       child: Container(
@@ -344,7 +364,11 @@ class _MyTripsState extends State<MyTrips> {
                     );
                   },
                 ),
+<<<<<<< HEAD
               ),
+=======
+              )
+>>>>>>> 0a6ca41 (Initial commit)
             ],
           ),
         );
