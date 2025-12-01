@@ -104,11 +104,37 @@ class _PlaceMapPageState extends State<PlaceMapPage> {
               ),
               const SizedBox(height: 12),
 
-              // Open-in-maps button directly below the map
-              ElevatedButton.icon(
-                onPressed: () => _openMapsExternal(context),
-                icon: Icon(Icons.map),
-                label: Text('Open in Google Maps'),
+              // Button row: open-in-maps button and distance to the right
+              Row(
+                children: [
+                  Expanded(
+                    child: ElevatedButton.icon(
+                      onPressed: () => _openMapsExternal(context),
+                      icon: Icon(Icons.map),
+                      label: Text('Open in Google Maps'),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  // Show distance with label; allow soft wrap if space is limited
+                  _currentPosition == null
+                      ? SizedBox(
+                          width: 120,
+                          child: Text(
+                            'Obtaining location...',
+                            textAlign: TextAlign.right,
+                            style: TextStyle(color: Colors.grey[700]),
+                          ),
+                        )
+                      : Flexible(
+                          child: Text(
+                            'Distance from you: ${_distanceKm()!.toStringAsFixed(2)} km',
+                            textAlign: TextAlign.right,
+                            softWrap: true,
+                            overflow: TextOverflow.visible,
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                ],
               ),
               const SizedBox(height: 12),
 
@@ -126,22 +152,23 @@ class _PlaceMapPageState extends State<PlaceMapPage> {
               const SizedBox(height: 12),
 
               // Name, city and description below the image
-              Text(widget.place['name'] ?? '',
-                  style: Theme.of(context).textTheme.titleLarge),
+              Row(
+                children: [
+                  Text(widget.place['name'] ?? '',
+                      style: Theme.of(context).textTheme.titleLarge),
+                  Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 8.0),
+                    child: Text(widget.place['city'] ?? '',
+                        style: Theme.of(context).textTheme.titleMedium),
+                  ),
+                ],
+              ),
               const SizedBox(height: 6),
-              Text(widget.place['city'] ?? '',
-                  style: Theme.of(context).textTheme.titleMedium),
+
               const SizedBox(height: 12),
               Text(widget.place['description'] ?? ''),
               const SizedBox(height: 12),
-
-              if (_currentPosition == null)
-                Text('Obtaining your location...')
-              else
-                Text(
-                  'Distance from you: ${_distanceKm()!.toStringAsFixed(2)} km',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
             ] else ...[
               // No coordinates: show image and info then offer external map
               if (widget.place['imageUrl'] != null &&
@@ -174,8 +201,42 @@ class _PlaceMapPageState extends State<PlaceMapPage> {
                 label: Text('Open in Google Maps'),
               ),
             ],
+            // History section (always after main content)
+            _buildHistorySection(),
           ],
         ),
+      ),
+    );
+  }
+
+  // After the main content, show a History section if available
+  Widget _buildHistorySection() {
+    if (widget.place['history'] == null ||
+        widget.place['history'].toString().trim().isEmpty) {
+      return SizedBox.shrink();
+    }
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Center(
+            child: Text(
+              'History',
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium
+                  ?.copyWith(fontWeight: FontWeight.bold, fontSize: 25),
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            widget.place['history'] ?? '',
+            textAlign: TextAlign.justify,
+            style: TextStyle(fontSize: 14, color: Colors.grey[800]),
+          ),
+        ],
       ),
     );
   }
