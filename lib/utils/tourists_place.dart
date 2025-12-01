@@ -19,6 +19,8 @@ const List<Map<String, dynamic>> touristsPlace = [
     'id': 2,
     'name': 'Hawa Mahal',
     'city': 'Jaipur',
+    'lat': 26.9239,
+    'lng': 75.8267,
     'distanceKm': 270.5,
     'imageUrl':
         'https://media.istockphoto.com/id/1476114600/photo/hawa-mahal-palace-or-palace-of-the-winds-in-jaipur-rajasthan-state-in-india.webp?a=1&b=1&s=612x612&w=0&k=20&c=4U_jAC9WVFjQ-y9AqzHQRS1Uu_05bbbYrjzVD7ScEgM=',
@@ -30,6 +32,8 @@ const List<Map<String, dynamic>> touristsPlace = [
     'id': 3,
     'name': 'India Gate',
     'city': 'New Delhi',
+    'lat': 28.6129,
+    'lng': 77.2295,
     'distanceKm': 5.2,
     'imageUrl':
         'https://media.gettyimages.com/id/1994355069/photo/close-up-image-of-new-delhi-india-gate-surrounded-by-crowds-of-tourists-on-public-lawn-cloudy.jpg?s=612x612&w=0&k=20&c=8l-XbubrSoSzreimV9yikm5t_xZL00O6dlfW4n6hFVQ=',
@@ -41,6 +45,8 @@ const List<Map<String, dynamic>> touristsPlace = [
     'id': 4,
     'name': 'Gateway of India',
     'city': 'Mumbai',
+    'lat': 18.9219,
+    'lng': 72.8347,
     'distanceKm': 13.1,
     'imageUrl':
         'https://media.gettyimages.com/id/522676842/photo/gateway-of-india-is-in-the-heart-of-mumbais-tourist-district-and-is-the-citys-most-famous.jpg?s=612x612&w=0&k=20&c=hxmVyYF55Hz0iRNjkhTbNsKhcaFEN3DQqJUR1h6vwmg=',
@@ -52,6 +58,8 @@ const List<Map<String, dynamic>> touristsPlace = [
     'id': 5,
     'name': 'Red Fort',
     'city': 'New Delhi',
+    'lat': 28.6562,
+    'lng': 77.2410,
     'distanceKm': 9.8,
     'imageUrl':
         'https://media.gettyimages.com/id/522676234/photo/lahore-gate-at-the-red-fort-lal-qila-seat-of-mughal-power-and-a-symbol-of-indian-nationhood.jpg?s=612x612&w=0&k=20&c=4zIRr4uBgEE-sYeyq8E2WneyQXT89nsW_93NyyveS3E=',
@@ -63,6 +71,8 @@ const List<Map<String, dynamic>> touristsPlace = [
     'id': 6,
     'name': 'Qutub Minar',
     'city': 'New Delhi',
+    'lat': 28.5244,
+    'lng': 77.1855,
     'distanceKm': 18.4,
     'imageUrl':
         'https://media.gettyimages.com/id/541363304/photo/qutb-minar-and-ruins-of-quwwat-ul-islam-mosque.jpg?s=612x612&w=0&k=20&c=WfN2tzWDZNKGVYY5HU49RTdX6-xT-Asg_Y-lBLcBrek=',
@@ -74,6 +84,8 @@ const List<Map<String, dynamic>> touristsPlace = [
     'id': 7,
     'name': 'Golden Temple',
     'city': 'Amritsar',
+    'lat': 31.6200,
+    'lng': 74.8765,
     'distanceKm': 450.0,
     'imageUrl':
         'https://media.gettyimages.com/id/504746394/photo/awsome-sikh-golden-temple-at-night-amritsar-india.jpg?s=612x612&w=0&k=20&c=2sY9VHVtd3StSvE-x3MmRLMvElJ2CBQweVD0jwZQMJc=',
@@ -85,6 +97,8 @@ const List<Map<String, dynamic>> touristsPlace = [
     'id': 8,
     'name': 'Juhu Beach',
     'city': 'Mumbai',
+    'lat': 19.0983,
+    'lng': 72.8260,
     'distanceKm': 16.7,
     'imageUrl':
         'https://media.gettyimages.com/id/1641809289/photo/aerial-view-of-juhu-beach-and-the-mumbai-city-just-after-the-rains-showing-clear-sky-near-the.jpg?s=612x612&w=0&k=20&c=tLdE2kt6gDzEElgfIbleth1NspP5FXI6syreKjnXQoo=',
@@ -96,6 +110,8 @@ const List<Map<String, dynamic>> touristsPlace = [
     'id': 9,
     'name': 'Marine Drive',
     'city': 'Mumbai',
+    'lat': 18.9433,
+    'lng': 72.8238,
     'distanceKm': 12.3,
     'imageUrl':
         'https://media.gettyimages.com/id/860198528/photo/mumbai-india-marine-drive-in-mumbai-marine-drive-aka-the-queens-necklace-is-a-3-kilometre-long.jpg?s=612x612&w=0&k=20&c=-2yIee5Y4ScSHUlDgRrzyjgq7O9zK2EFiYonY_9guVw=',
@@ -107,6 +123,8 @@ const List<Map<String, dynamic>> touristsPlace = [
     'id': 10,
     'name': 'Lotus Temple',
     'city': 'New Delhi',
+    'lat': 28.5535,
+    'lng': 77.2588,
     'distanceKm': 14.2,
     'imageUrl':
         'https://media.gettyimages.com/id/1229675523/photo/new-delhi-india-a-clear-view-of-lotus-temple-at-kalkaji-on-november-18-2020-in-new-delhi-india.jpg?s=612x612&w=0&k=20&c=1p5Sak0B559tshGiXWSpIkNXJs_Ry0SQMkIvcb9JIzE=',

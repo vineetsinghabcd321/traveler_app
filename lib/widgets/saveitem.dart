@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:traveler_app/utils/data.dart';
+import 'package:traveler_app/utils/tourists_place.dart' as tp;
+import 'package:traveler_app/google_map/tourists_place.dart' as place_map;
 
 class SavedItem extends StatefulWidget {
   @override
@@ -76,7 +78,7 @@ class _SavedItemState extends State<SavedItem> {
                               alignment: Alignment.centerLeft,
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(
-                                  vertical: 20.0,
+                                  vertical: 25.0,
                                   horizontal: 10,
                                 ),
                                 child: Column(
@@ -104,19 +106,75 @@ class _SavedItemState extends State<SavedItem> {
                                     const SizedBox(height: 10.0),
                                     Row(
                                       children: [
-                                        Icon(
-                                          Iconsax.location,
-                                          size: 15,
-                                          color: Colors.white,
-                                        ),
-                                        SizedBox(width: 2),
-                                        Text(
-                                          datar['location'],
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontFamily: 'Ubuntu-Regular',
-                                            fontSize: 12,
-                                            color: Colors.white,
+                                        GestureDetector(
+                                          onTap: () {
+                                            // try to find a matching place in touristsPlace by city or place name
+                                            Map<String, dynamic>? match;
+                                            try {
+                                              match = tp.touristsPlace
+                                                  .firstWhere((p) {
+                                                final cityMatch =
+                                                    p['city'] != null &&
+                                                        p['city']
+                                                                .toString()
+                                                                .toLowerCase()
+                                                                .trim() ==
+                                                            datar['city']
+                                                                .toString()
+                                                                .toLowerCase()
+                                                                .trim();
+                                                final nameMatch =
+                                                    p['name'] != null &&
+                                                        p['name']
+                                                                .toString()
+                                                                .toLowerCase()
+                                                                .trim() ==
+                                                            datar['places']
+                                                                .toString()
+                                                                .toLowerCase()
+                                                                .trim();
+                                                return cityMatch || nameMatch;
+                                              }) as Map<String, dynamic>?;
+                                            } catch (e) {
+                                              match = null;
+                                            }
+
+                                            if (match != null) {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (_) =>
+                                                      place_map.PlaceMapPage(
+                                                          place: match!),
+                                                ),
+                                              );
+                                            } else {
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                SnackBar(
+                                                    content: Text(
+                                                        'Location details not available')),
+                                              );
+                                            }
+                                          },
+                                          child: Row(
+                                            children: [
+                                              Icon(
+                                                Iconsax.location,
+                                                size: 15,
+                                                color: Colors.white,
+                                              ),
+                                              SizedBox(width: 2),
+                                              Text(
+                                                datar['location'],
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontFamily: 'Ubuntu-Regular',
+                                                  fontSize: 12,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ],
